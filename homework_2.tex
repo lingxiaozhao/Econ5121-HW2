@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{float}
+\author{Lingxiao Zhao}
+\title{Numerical Methods Homework 2}
+\begin{document}
+\maketitle
+I use dynare to compute a basic RBC model with shocks following Cole and Ohanian, "The U.S. and U.K. Great Depressions Through the Lens of Neoclassical Growth Theory," (AER 2004).\\~\\
+
+My model is
+$$ max \quad E_0[\sum_{t=0}^{\infty}\beta^t\{log(c_t)+\phi log(1-n_t)\}]$$
+
+such that
+$$c_t+i_t=k_t^{\theta}(e^{x_t}n_t)^{1-\theta}$$
+$$k_t=(1-\delta)k_{t-1}+i_t$$
+$$x_t=\rho_xx_{t-1}+\epsilon_t$$
+
+Here is the result using dynare.
+
+\begin{figure}[H]
+	\centering		
+	\subfigure[Orthogonal shock to $e$]{
+		\label{Fig.sub.3}
+		\includegraphics[width=5in]{e}}
+	\subfigure[Orthogonal shock to $u$]{
+		\label{Fig.sub.2}
+		\includegraphics[width=5in]{u}}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=5in]{ex}
+\caption{Orthogonal shock to $e_x$}
+\end{figure}
+\end{document}
